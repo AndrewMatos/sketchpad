@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sketchpad</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1 class=title>Sketchpad</h1>
+
+
+<div class="grid">
+	<div class="gridcontainer50"></div>
+</div>
+<div class="menu">
+	<p class="sqsize">Square size</p>
+	<p class="type">type of color</p>
+	<br>
+	<select id="btn1">
+  <!--<option value=null>Square size</option> -->
+  		<option value=50>50</option>
+  		<option value=10>100</option>
+  		<option value=20>80</option>
+  		<option value=40>60</option>
+  		<option value=60>40</option>
+  		<option value=80>20</option>
+  		<option value=100>10</option>
+  
+	</select>
+
+	<select id="btn3">
+		<option value="black">black</option>
+		<option value="grey">grey to black</option>
+		<option value="rainbow">Random colors</option>
+	</select>
+	<button id="btn2">Clear</button>
+</div>
+
+<script >
+
+let g=50;
+let gridc=document.querySelector(".gridcontainer50");
+let btn1=document.querySelector("#btn1");
+let btn2=document.querySelector("#btn2");
+let btn3=document.querySelector("#btn3")
+let grid=document.querySelector(".grid");
+
+
+addsquare();
+
+function addsquare() {
+
+   
+  for (i=1;i<=g*g;i++) {
+  	const div=document.createElement("div");
+  	div.classList.add("griditem");
+  	gridc.appendChild(div);
+  }
+  
+}
+
+let griditem=document.querySelectorAll(".griditem");
+
+
+function removesquares (){
+	for (i=0;i<griditem.length;i++)
+	{ 
+		gridc.removeChild(gridc.childNodes[0]);
+		}  
+}
+
+
+
+function paint(){
+	
+	this.classList.add("click");
+	this.style.removeProperty("background-color"); 
+ }
+
+ function paint2(){
+	
+this.style.backgroundColor= 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+  
+ }
+
+function layer(){
+		if (this.style.opacity <0.2) {this.style.opacity=0.2}
+		else if (this.style.opacity==0.2){this.style.opacity =0.4;}
+		else if (this.style.opacity==0.4){this.style.opacity =0.6;}
+		else if (this.style.opacity==0.6){this.style.opacity =0.8;}
+		else if (this.style.opacity==0.8){this.style.opacity =1;}
+		   	
+}
+
+function layer2() {this.style.opacity=1;}
+
+gridc.addEventListener( "mousedown" ,function(){
+		 
+				for (i=0;i<griditem.length;i++){
+					if(btn3.value=="black"){
+						griditem.item(i).addEventListener("mouseover",layer2);
+						griditem.item(i).addEventListener("mouseover",paint);}
+						//griditem.item(i)
+					else if(btn3.value=="rainbow"){
+						griditem.item(i).addEventListener("mouseover",layer2);
+						griditem.item(i).addEventListener("mouseover",paint2); }
+					else if (btn3.value=="grey") {
+						griditem.item(i).addEventListener("mouseover",layer);
+						griditem.item(i).addEventListener("mouseover",paint);}
+					}
+					
+				
+})
+			
+
+gridc.addEventListener( "mouseup" ,function(){ 
+
+				for (i=0;i<griditem.length;i++){
+						griditem.item(i).removeEventListener("mouseover",paint)
+						griditem.item(i).removeEventListener("mouseover",paint2)
+						griditem.item(i).removeEventListener("mouseover",layer)
+						griditem.item(i).removeEventListener("mouseover",layer2)  
+				}
+	
+ });
+
+
+btn1.addEventListener("change",function () {
+	//let p = prompt(`Actual=${g}  Max= 100`)
+   let p=btn1.value;
+	if(p==0){p=null}
+	if (p!=null){
+ 		for (i=0;i<griditem.length;i++){
+ 			griditem.item(i).classList.remove("click");
+ 			griditem.item(i).removeAttribute("style");
+ 		}
+ 		removesquares();
+ 		if (p<=10){p=10;
+ 		gridc.classList.remove(`gridcontainer${g}`);
+ 		gridc.classList.add(`gridcontainer${p}`);}
+ 		else if (p>10 && p<=20){p=20;
+ 		gridc.classList.remove(`gridcontainer${g}`);
+ 		gridc.classList.add(`gridcontainer${p}`);}
+ 		else if (p>20 && p<=40){p=40;
+ 		gridc.classList.remove(`gridcontainer${g}`);
+ 		gridc.classList.add(`gridcontainer${p}`);}
+ 		else if (p>40 && p<=50){p=50;
+ 		gridc.classList.remove(`gridcontainer${g}`);
+ 		gridc.classList.add(`gridcontainer${p}`);}
+ 		else if (p>50 && p<=60){p=60;
+ 		gridc.classList.remove(`gridcontainer${g}`);
+ 		gridc.classList.add(`gridcontainer${p}`);}
+ 		else if (p>60 && p<=80){p=80;
+ 		gridc.classList.remove(`gridcontainer${g}`);
+ 		gridc.classList.add(`gridcontainer${p}`);}
+ 		else if (p>80 && p<=100){p=100;
+ 		gridc.classList.remove(`gridcontainer${g}`);
+ 		gridc.classList.add(`gridcontainer${p}`);}
+ 		g=p;
+ 		addsquare();
+ 		griditem=document.querySelectorAll(".griditem");
+ 	}
+})
+
+
+btn2.addEventListener("click",function () {
+	for (i=0;i<griditem.length;i++){
+ 			griditem.item(i).classList.remove("click");
+ 			griditem.item(i).removeAttribute("style");
+ 		}
+})
+	
+
+ 
+</script>
+  
+
+</body>
+</html>

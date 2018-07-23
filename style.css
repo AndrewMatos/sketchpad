@@ -1,0 +1,156 @@
+html{background-color: #9797e4;
+background-size: cover;}
+
+.title{
+color: white;
+background-color:#36363c;
+border-bottom: 4px solid;
+border-color: white;
+margin-left: -10px;
+padding-left: 22px;
+margin-top: -30px;
+padding-top: 30px;
+margin-right: -22px; }
+
+.gridcontainer50 {
+	width: 395px;
+	height: 395px;
+  display: grid;
+  grid-template-columns: repeat(50, auto);
+  grid-template-rows: repeat(50, auto);
+  border: 0.5px solid ;
+  border-color: #d8d8f9;
+ background-color: white;
+ border-radius: 5px;
+ float:left;
+   
+}
+
+.gridcontainer10 {
+	width: 395px;
+  height: 395px;
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  grid-template-rows: repeat(10, auto);
+  border: 0.5px solid ;
+  border-color: #d8d8f9;
+ background-color: white;
+ border-radius: 5px;
+  float:left;
+}
+
+.gridcontainer20 {
+	width: 395px;
+  height: 395px;
+  display: grid;
+  grid-template-columns: repeat(20, auto);
+  grid-template-rows: repeat(20, auto);
+  border: 0.5px solid ;
+  border-color: #d8d8f9;
+ background-color: white;
+ border-radius: 5px;
+  float:left;
+}
+
+.gridcontainer40 {
+	width: 395px;
+  height: 395px;
+  display: grid;
+  grid-template-columns: repeat(40, auto);
+  grid-template-rows: repeat(40, auto);
+  border: 0.5px solid ;
+  border-color: #d8d8f9;
+ background-color: white;
+ border-radius: 5px;
+  float:left;
+}
+
+.gridcontainer60 {
+width: 395px;
+  height: 395px;
+  display: grid;
+  grid-template-columns: repeat(60, auto);
+  grid-template-rows: repeat(60, auto);
+ border: 0.5px solid ;
+  border-color: #d8d8f9;
+ background-color: white;
+ border-radius: 5px;
+  float:left;
+}
+
+.gridcontainer80 {
+	width: 395px;
+  height: 395px;
+  display: grid;
+  grid-template-columns: repeat(80, auto);
+  grid-template-rows: repeat(80, auto);
+ border: 0.5px solid ;
+  border-color: #d8d8f9;
+ background-color: white;
+ border-radius: 5px;
+  float:left;
+}
+
+.gridcontainer100 {
+	width: 395px;
+  height: 395px;
+  display: grid;
+  grid-template-columns: repeat(100, auto);
+  grid-template-rows: repeat(100, auto);
+  border: 0.5px solid ;
+  border-color: #d8d8f9;
+ background-color: white;
+ border-radius: 5px;
+  float:left;
+}
+
+.griditem { 
+	padding: 1px;
+	opacity: 0;
+ }
+
+ .click { 
+ background-color:black 
+  }
+
+
+.menu{float: left;
+  margin-left: 20px;
+margin-top: -15px;}
+
+p{display: inline-block;
+color:white;
+font-family: sans-serif;}
+
+.type{ margin-left: 10px; }
+
+#btn1{
+   padding-top: 5px;
+padding-bottom: 5px;
+  color:white;
+   background-color: #36363c;
+   border: 0px solid;
+  border-radius: 3px;
+  margin-top: -20px;
+  margin-left: -2px;
+  padding-right: 35px;
+}
+
+#btn2{ margin-top: -20px; 
+ padding-top: 5px;
+padding-bottom: 5px;
+  color:white;
+   background-color: #36363c;
+   border: 0px solid;
+  border-radius: 3px;}
+
+#btn3{
+  padding-top: 5px;
+padding-bottom: 5px;
+  color:white;
+   background-color: #36363c;
+   border: 0px solid;
+  border-radius: 3px;
+  margin-top: -20px;
+  margin-left: 8px;
+margin-right: 8px;}
